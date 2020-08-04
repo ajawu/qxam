@@ -1,0 +1,52 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Qxam | SignUp{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col screen-half d-none d-lg-flex d-xl-flex">
+                <img src="{% static 'resources/img/auth_pages_main_illustration.webp' %}"
+                     alt="student-writing-illustration" class="auth-page-illustration">
+            </div>
+            <div class="col screen-half">
+                <div class="form-container">
+                    <form action="/register/" method="post">
+                        <h6 class="form-title">
+                            Create an account
+                        </h6>
+                        <p class="form-subtitle">
+                            Hello, Welcome to Qxam
+                        </p>
+
+                        <label for="id_name" class="form-label step-1 active">Full Name</label>
+                        <input type="text" id="id_name" name="full_name" class="form-input step-1 active" required>
+                        <br class="step-1 active">
+                        <label for="id_email" class="form-label step-1 active">Email</label>
+                        <input type="email" id="id_email" name="email" class="form-input step-1 active" required>
+                        <br class="step-1 active">
+                        <label for="id_password" class="form-label step-2">Password</label>
+                        <input type="password" id="id_password" name="password" class="form-input step-2" required>
+                        <br class="step-2">
+                        <label for="id_password2" class="form-label step-2">Confirm Password</label>
+                        <input type="password" id="id_password2" name="password2" class="form-input step-2" required>
+                        <br class="step-2">
+                        <div class="text-left step-2">
+                            <p href="#" class="back-text d-inline-block step-2" id='back-button'>Back to previous</p>
+                            <button type="submit" class="submit-button step-2">Sign Up</button>
+                        </div>
+                    </form>
+                    <button class="btn-continue submit-button large active step-1">Continue</button>
+                    <p class="no-account-text">
+                        Already have an account? <a class="small-link-blue" href="login.html">Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'resources/js/app.js' %}"></script>
+{% endblock %}
